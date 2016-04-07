@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://yoursite.com/2016/04/07/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    
+    <lastmod>2016-04-07T07:46:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/photo/output.json</loc>
+    
+    <lastmod>2016-04-07T03:44:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/photo/index.html</loc>
+    
+    <lastmod>2016-04-07T03:13:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2016-04-07T02:43:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/404.html</loc>
+    
+    <lastmod>2016-03-31T09:32:31.000Z</lastmod>
+    
+  </url>
+  
+</urlset>

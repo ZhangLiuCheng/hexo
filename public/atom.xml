@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>哎呦哇</title>
+  <subtitle>别人怎么看自己不重要，重要是自己怎么看自己</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-04-07T07:46:21.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>ZhangLiuCheng</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo博客搭建</title>
+    <link href="http://yoursite.com/2016/04/07/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    <id>http://yoursite.com/2016/04/07/博客搭建/</id>
+    <published>2016-04-07T02:11:00.000Z</published>
+    <updated>2016-04-07T07:46:21.000Z</updated>
+    
+    <content type="html">&lt;p&gt;花了两天时间，终于hexo搭建好了，主要时间浪费在选择&lt;a href=&quot;https://hexo.io/docs/themes.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;theme&lt;/a&gt;上，总觉得没有自己想要的。&lt;br&gt;搭建的过程相对来说还是比较顺利的，主要参考链接如下：&lt;br&gt;&lt;a href=&quot;http://zipperary.com/categories/hexo/&quot; target=&quot;_blank&quot;&gt;Lippera’s blog&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.hjtxxx.com/2015/08/13/Hexo-一-：在GitHub上搭建静态博客/&quot; target=&quot;_blank&quot;&gt;HEYJ的技术博客&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://litten.github.io/2014/08/31/hexo-theme-yilia/#more&quot; target=&quot;_blank&quot;&gt;Litten&lt;/a&gt;(也是使用他的主题)&lt;/p&gt;
+&lt;h3 id=&quot;该主题遇到两个不是很重要的小问题。&quot;&gt;&lt;a href=&quot;#该主题遇到两个不是很重要的小问题。&quot; class=&quot;headerlink&quot; title=&quot;该主题遇到两个不是很重要的小问题。&quot;&gt;&lt;/a&gt;该主题遇到两个不是很重要的小问题。&lt;/h3&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;一. 该主题&lt;code&gt;点击头像&lt;/code&gt;和点击主页效果一样。想把点击头像显示aboutme的页面。于是新建一个about页面，然后修改themes/yilia/layout/_partial/left-col.ejs第4行为&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;a href=&amp;quot;/about/&amp;quot; class=&amp;quot;profilepic&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;二. 相册功能&lt;a href=&quot;https://github.com/litten/hexo-theme-yilia/wiki/同步你的instagram图片&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;instagram&lt;/a&gt;，由于instagram被禁…暂不可用，无奈得换种方法实现，找到另一种方法，&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/xljzlw/p/5137622.html?utm_source=tuicool&amp;utm_medium=referral&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo相册功能&lt;/a&gt;，该方法需要在根目录新建个photos文件夹，将文件夹里面的图片提交的github，然后通过js将图片生产output.json文件，这样本地需要保存一份，我的电脑是128gmac，空间本身就少，所以我直接将图片提交到七牛云存储，然后把链接直接写到output.json里面，然后再修改photo.js里面的图片路径，同样能实现。&lt;/p&gt;
+&lt;p&gt;三. img标签设置width和height没有效果。我图片是上传在七牛上的，所以在图片连接后面增加&lt;code&gt;?imageView2/1/w/200/h/200&lt;/code&gt;，勉强可以解决图片大小问题。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.appinn.com/markdown/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown&lt;/a&gt;以下是常用的字体样式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;点&lt;br&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;br&gt;&lt;em&gt;斜体&lt;/em&gt;&lt;br&gt;&lt;code&gt;行内代码&lt;/code&gt;&lt;br&gt;&lt;del&gt;删除线&lt;/del&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#三个反引号包围的是代码块。&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;#会显示行号。&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;好好学习，天天向上&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!--  
+&lt;img src=&quot;http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg?imageView2/1/w/200/h/200&quot;/&gt;
+--&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;花了两天时间，终于hexo搭建好了，主要时间浪费在选择&lt;a href=&quot;https://hexo.io/docs/themes.html&quot;&gt;theme&lt;/a&gt;上，总觉得没有自己想要的。&lt;br&gt;搭建的过程相对来说还是比较顺利的，主要参考链接如下：&lt;br&gt;&lt;a href=&quot;http://zipperary.com/categories/hexo/&quot; target=&quot;_blank&quot;&gt;Lippera’s blog&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.hjtxxx.com/2015/08/13/Hexo-一-：在GitHub上搭建静态博客/&quot; target=&quot;_blank&quot;&gt;HEYJ的技术博客&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://litten.github.io/2014/08/31/hexo-theme-yilia/#more&quot; target=&quot;_blank&quot;&gt;Litten&lt;/a&gt;(也是使用他的主题)&lt;/p&gt;
+&lt;h3 id=&quot;该主题遇到两个不是很重要的小问题。&quot;&gt;&lt;a href=&quot;#该主题遇到两个不是很重要的小问题。&quot; class=&quot;headerlink&quot; title=&quot;该主题遇到两个不是很重要的小问题。&quot;&gt;&lt;/a&gt;该主题遇到两个不是很重要的小问题。&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>
