@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/photo/output.json</loc>
+    <loc>http://yoursite.com/2016/04/07/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     
-    <lastmod>2016-04-08T07:45:23.000Z</lastmod>
+    <lastmod>2016-04-08T12:31:28.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/04/07/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <loc>http://yoursite.com/2016/04/08/slideMenu%E5%92%8CUIScrollView%E6%89%8B%E5%8A%BF%E5%86%B2%E7%AA%81/</loc>
     
-    <lastmod>2016-04-07T07:46:21.000Z</lastmod>
+    <lastmod>2016-04-08T12:18:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/photo/output.json</loc>
+    
+    <lastmod>2016-04-08T07:45:23.000Z</lastmod>
     
   </url>
   
