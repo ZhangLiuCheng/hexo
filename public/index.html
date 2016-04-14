@@ -172,6 +172,57 @@ var _hmt = _hmt || [];
 
       <div class="body-wrap">
   
+    <article id="post-ios录制视频调研" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/09/ios录制视频调研/" class="article-date">
+  	<time datetime="2016-04-08T16:00:00.000Z" itemprop="datePublished">2016-04-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: ios录制小视频(仿微信/钉钉)<br>date: 2016-04-13 11:57:10<br>tags:</p>
+<pre><code>- ios        
+</code></pre><p>categories:</p>
+<pre><code>- App开发
+</code></pre><p>–</p>
+<h3 id="UIImagePickerController-AVFoundation-录制小视频记录。"><a href="#UIImagePickerController-AVFoundation-录制小视频记录。" class="headerlink" title="UIImagePickerController AVFoundation 录制小视频记录。-"></a>UIImagePickerController AVFoundation 录制小视频记录。-</h3><p>公司的App里面需要添加个发送小视频功能，需要尽快搞出来，直接让模仿微信的小视频，查资料得出：<br>1.调用UIImagePickerController，系统默认录制方法，这个比较简单，代码如下：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)gestureRecognizerShouldBegin:(<span class="built_in">UIGestureRecognizer</span> *)gestureRecognizer &#123;</span><br><span class="line">    <span class="keyword">if</span> (![gestureRecognizer isKindOfClass:[<span class="built_in">UIPanGestureRecognizer</span> class]]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">CGPoint</span> velocity = [(<span class="built_in">UIPanGestureRecognizer</span> *)gestureRecognizer velocityInView:<span class="keyword">self</span>];</span><br><span class="line">    <span class="keyword">if</span> (velocity.x &gt; <span class="number">0.0</span>f &amp;&amp; <span class="keyword">self</span>.contentOffset.x == <span class="number">0</span> ) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/09/ios录制视频调研/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-slideMenu和UIScrollView手势冲突" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

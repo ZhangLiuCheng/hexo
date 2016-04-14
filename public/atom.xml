@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-08T12:18:39.000Z</updated>
+  <updated>2016-04-14T06:14:36.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2016/04/09/ios%E5%BD%95%E5%88%B6%E8%A7%86%E9%A2%91%E8%B0%83%E7%A0%94/"/>
+    <id>http://yoursite.com/2016/04/09/ios录制视频调研/</id>
+    <published>2016-04-08T16:00:00.000Z</published>
+    <updated>2016-04-14T06:14:36.000Z</updated>
+    
+    <content type="html">&lt;hr&gt;
+&lt;p&gt;title: ios录制小视频(仿微信/钉钉)&lt;br&gt;date: 2016-04-13 11:57:10&lt;br&gt;tags:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- ios        
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;categories:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- App开发
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;–&lt;/p&gt;
+&lt;h3 id=&quot;UIImagePickerController-AVFoundation-录制小视频记录。&quot;&gt;&lt;a href=&quot;#UIImagePickerController-AVFoundation-录制小视频记录。&quot; class=&quot;headerlink&quot; title=&quot;UIImagePickerController AVFoundation 录制小视频记录。-&quot;&gt;&lt;/a&gt;UIImagePickerController AVFoundation 录制小视频记录。-&lt;/h3&gt;&lt;p&gt;公司的App里面需要添加个发送小视频功能，需要尽快搞出来，直接让模仿微信的小视频，查资料得出：&lt;br&gt;1.调用UIImagePickerController，系统默认录制方法，这个比较简单，代码如下：&lt;br&gt;&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- (&lt;span class=&quot;built_in&quot;&gt;BOOL&lt;/span&gt;)gestureRecognizerShouldBegin:(&lt;span class=&quot;built_in&quot;&gt;UIGestureRecognizer&lt;/span&gt; *)gestureRecognizer &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (![gestureRecognizer isKindOfClass:[&lt;span class=&quot;built_in&quot;&gt;UIPanGestureRecognizer&lt;/span&gt; class]]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;YES&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;CGPoint&lt;/span&gt; velocity = [(&lt;span class=&quot;built_in&quot;&gt;UIPanGestureRecognizer&lt;/span&gt; *)gestureRecognizer velocityInView:&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (velocity.x &amp;gt; &lt;span class=&quot;number&quot;&gt;0.0&lt;/span&gt;f &amp;amp;&amp;amp; &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.contentOffset.x == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; ) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;NO&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;YES&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;友情连接&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/kenshincui/p/4186022.html#uiImagePickerController&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Kenshin Cui’s Blog&lt;/a&gt;, &lt;a href=&quot;https://kevinmky.github.io/2016/01/04/自定义相机/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;KevinMkY’s Blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;title: ios录制小视频(仿微信/钉钉)&lt;br&gt;date: 2016-04-13 11:57:10&lt;br&gt;tags:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- ios        
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;categories:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- App开发
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;–&lt;/p&gt;
+&lt;h3 id=&quot;UIImagePickerController-AVFoundation-录制小视频记录。&quot;&gt;&lt;a href=&quot;#UIImagePickerController-AVFoundation-录制小视频记录。&quot; class=&quot;headerlink&quot; title=&quot;UIImagePickerController AVFoundation 录制小视频记录。-&quot;&gt;&lt;/a&gt;UIImagePickerController AVFoundation 录制小视频记录。-&lt;/h3&gt;&lt;p&gt;公司的App里面需要添加个发送小视频功能，需要尽快搞出来，直接让模仿微信的小视频，查资料得出：&lt;br&gt;1.调用UIImagePickerController，系统默认录制方法，这个比较简单，代码如下：&lt;br&gt;&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- (&lt;span class=&quot;built_in&quot;&gt;BOOL&lt;/span&gt;)gestureRecognizerShouldBegin:(&lt;span class=&quot;built_in&quot;&gt;UIGestureRecognizer&lt;/span&gt; *)gestureRecognizer &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (![gestureRecognizer isKindOfClass:[&lt;span class=&quot;built_in&quot;&gt;UIPanGestureRecognizer&lt;/span&gt; class]]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;YES&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;CGPoint&lt;/span&gt; velocity = [(&lt;span class=&quot;built_in&quot;&gt;UIPanGestureRecognizer&lt;/span&gt; *)gestureRecognizer velocityInView:&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (velocity.x &amp;gt; &lt;span class=&quot;number&quot;&gt;0.0&lt;/span&gt;f &amp;amp;&amp;amp; &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.contentOffset.x == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; ) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;NO&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;YES&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>SlideMenu和UIScrollView手势冲突</title>
