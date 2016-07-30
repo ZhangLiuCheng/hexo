@@ -172,67 +172,6 @@ var _hmt = _hmt || [];
 
       <div class="body-wrap">
   
-    <article id="post-aspectJ学习" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/30/aspectJ学习/" class="article-date">
-  	<time datetime="2016-07-30T09:27:13.000Z" itemprop="datePublished">2016-07-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/30/aspectJ学习/">aspectJ学习</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote><p><strong>不闻不问不一定是忘记了，但一定是疏远了，彼此沉默太久就连主动的都需要勇气。</strong></p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aop/">aop</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/java/">java</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -403,6 +342,73 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a  href="/2016/04/10/slideMenu和UIScrollView手势冲突/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-aspectJ学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/03/aspectJ学习/" class="article-date">
+  	<time datetime="2016-04-03T09:27:13.000Z" itemprop="datePublished">2016-04-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/03/aspectJ学习/">aspectJ学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote><p><strong>不闻不问不一定是忘记了，但一定是疏远了，彼此沉默太久就连主动的都需要勇气。</strong></p>
+</blockquote>
+<p>aop的实现我目前了解的有两种，一种是通过动态代理（实现InvocationHandler接口或者用第三方cglib库，两者区别这就不介绍了），另一种是aspectJ。aspectJ基本环境搭建，首先eclipse<a href="http://www.eclipse.org/aspectj/downloads.php">安装插件</a>，aspect基本用法可以参考官方<a href="http://www.eclipse.org/aspectj/doc/released/progguide/starting-aspectj.html">官方文档</a></p>
+<h3 id="一-Aspect基本用法，代码如下："><a href="#一-Aspect基本用法，代码如下：" class="headerlink" title="一.Aspect基本用法，代码如下："></a>一.Aspect基本用法，代码如下：</h3><p><strong><em> 1.创建基本的main入口 </em></strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zlc.aj;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Test t = <span class="keyword">new</span> Test();</span><br><span class="line">		t.sayHello();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aop/">aop</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/java/">java</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/03/aspectJ学习/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
