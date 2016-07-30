@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-15T05:41:33.000Z</updated>
+  <updated>2016-07-30T09:31:59.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,56 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>aspectJ学习</title>
+    <link href="http://yoursite.com/2016/07/30/aspectJ%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2016/07/30/aspectJ学习/</id>
+    <published>2016-07-30T09:27:13.000Z</published>
+    <updated>2016-07-30T09:31:59.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;不闻不问不一定是忘记了，但一定是疏远了，彼此沉默太久就连主动的都需要勇气。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;不闻不问不一定是忘记了，但一定是疏远了，彼此沉默太久就连主动的都需要勇气。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="aop" scheme="http://yoursite.com/tags/aop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>笔记</title>
+    <link href="http://yoursite.com/2016/07/08/%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2016/07/08/笔记/</id>
+    <published>2016-07-08T05:49:02.000Z</published>
+    <updated>2016-07-08T05:51:36.000Z</updated>
+    
+    <content type="html">&lt;p&gt;1.mvc mvp mvvm    (&lt;a href=&quot;http://www.tuicool.com/articles/FrAJ3qv&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.tuicool.com/articles/FrAJ3qv&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;2.DataBinding    (&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MjM5NDkxMTgyNw==&amp;amp;mid=405212572&amp;amp;idx=1&amp;amp;sn=e2a84186dccc7661e0644feb38d74f8c&amp;amp;scene=21#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mp.weixin.qq.com/s?__biz=MjM5NDkxMTgyNw==&amp;amp;mid=405212572&amp;amp;idx=1&amp;amp;sn=e2a84186dccc7661e0644feb38d74f8c&amp;amp;scene=21#wechat_redirect&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;3.RACSubject&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.mvc mvp mvvm    (&lt;a href=&quot;http://www.tuicool.com/articles/FrAJ3qv&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.tuicool.com/articles/FrAJ3
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>ios录制小视频(仿微信/钉钉)</title>
     <link href="http://yoursite.com/2016/04/15/ios%E5%BD%95%E5%88%B6%E8%A7%86%E9%A2%91%E8%B0%83%E7%A0%94/"/>
     <id>http://yoursite.com/2016/04/15/ios录制视频调研/</id>
     <published>2016-04-15T14:57:10.000Z</published>
-    <updated>2016-04-15T05:41:33.000Z</updated>
+    <updated>2016-04-18T03:17:25.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;人生一条路，走自己的路，&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;人生两个好，身体好，心情好&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;好好珍惜每一天！&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -34,7 +79,8 @@
 &lt;p&gt;&lt;strong&gt;&lt;em&gt; 4.添加预览 &lt;/em&gt;&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- (&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)addPreviewLayer &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    _captureVideoPreviewLayer = [[&lt;span class=&quot;built_in&quot;&gt;AVCaptureVideoPreviewLayer&lt;/span&gt; alloc] initWithSession:_captureSession];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    _captureVideoPreviewLayer.videoGravity = &lt;span class=&quot;built_in&quot;&gt;AVLayerVideoGravityResizeAspectFill&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    _captureVideoPreviewLayer.connection.videoOrientation = [_movieOutput connectionWithMediaType:&lt;span class=&quot;built_in&quot;&gt;AVMediaTypeVideo&lt;/span&gt;].videoOrientation;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    _captureVideoPreviewLayer.frame = &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.view.layer.bounds;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.view.layer insertSublayer:_captureVideoPreviewLayer atIndex:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt; 5.添加输出源 &lt;/em&gt;&lt;/strong&gt;（输出源先介绍两种种方式，一种AVCaptureMovieFileOutput直接将视频写入文件，如果不需要对视频做其他处理的话，用AVCaptureMovieFileOutput相对来容易点，代码量也会少很多。另外一种同时添加AVCaptureVideoDataOutput和AVCaptureAudioDataOutput，这个保存的时候需要用AVAssetWriterInput将音视频写入文件）&lt;br&gt;&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// AVCaptureMovieFileOutput&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)addOutput &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 将视频输出添加到captureSession&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    _movieOutput = [[&lt;span class=&quot;built_in&quot;&gt;AVCaptureMovieFileOutput&lt;/span&gt; alloc] init];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ([_captureSession canAddOutput:_movieOutput]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        [_captureSession addOutput:_movieOutput];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;AVCaptureConnection&lt;/span&gt; *captureConnection = [_movieOutput connectionWithMediaType:&lt;span class=&quot;built_in&quot;&gt;AVMediaTypeVideo&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ([captureConnection isVideoOrientationSupported]) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            [captureConnection setVideoOrientation:&lt;span class=&quot;built_in&quot;&gt;AVCaptureVideoOrientationPortrait&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 视频稳定设置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//        if ([captureConnection isVideoStabilizationSupported]) &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//            captureConnection.preferredVideoStabilizationMode = AVCaptureVideoStabilizationModeAuto;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//        &amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        captureConnection.videoScaleAndCropFactor = captureConnection.videoMaxScaleAndCropFactor;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;---------------------------------------------分割线------------------------------------------------------&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;&lt;code&gt;视频没有特殊处理的用上面那个方法就可以了，AVCaptureVideoDataOutput和AVCaptureAudioDataOutput有时间单独开一篇。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;&lt;em&gt; 6. 开始录像和停止录像 &lt;/em&gt;&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- (&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)startRecord &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [_movieOutput startRecordingToOutputFileURL:[&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt; outPutFileURL] recordingDelegate:&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)stopRecord &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [_movieOutput stopRecording];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (&lt;span class=&quot;built_in&quot;&gt;NSURL&lt;/span&gt; *)outPutFileURL &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; [&lt;span class=&quot;built_in&quot;&gt;NSURL&lt;/span&gt; fileURLWithPath:[&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; stringWithFormat:&lt;span class=&quot;string&quot;&gt;@&quot;%@%@&quot;&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;NSTemporaryDirectory&lt;/span&gt;(), &lt;span class=&quot;string&quot;&gt;@&quot;tempOutPut.mov&quot;&lt;/span&gt;]];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;简单的录制视频就算完成了，领导后来要求要和钉钉或者qq的小视频一样，视频可以分段删除。花了一天时间找分段删除方法也没找到合适的，后来果断每一段就是一个视频（一个视频有多个小视频组成），android和ios可以连续播放多个视频，也和一个视频差不多，不过后台不愿意这样干（不知道是不是那边没找到联系播放多个的好方法），没办法啊，后来打算用&lt;code&gt;ffmpeg&lt;/code&gt;将多个视频拼接成一个视频。&lt;/p&gt;
-&lt;p&gt;…&lt;/p&gt;
+&lt;p&gt;…&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/ZhangLiuCheng/Ios_VideoRecord&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Demo&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;以上代码都是参考下面连接&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/kenshincui/p/4186022.html#uiImagePickerController&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Kenshin Cui’s Blog&lt;/a&gt;, &lt;a href=&quot;https://kevinmky.github.io/2016/01/04/自定义相机/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;KevinMkY’s Blog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -87,10 +133,10 @@
   
   <entry>
     <title>hexo博客搭建</title>
-    <link href="http://yoursite.com/2016/04/07/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    <id>http://yoursite.com/2016/04/07/博客搭建/</id>
-    <published>2016-04-07T12:11:00.000Z</published>
-    <updated>2016-04-15T05:41:39.000Z</updated>
+    <link href="http://yoursite.com/2016/03/31/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    <id>http://yoursite.com/2016/03/31/博客搭建/</id>
+    <published>2016-03-31T12:11:00.000Z</published>
+    <updated>2016-07-30T09:30:31.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;笑一个吧，没人会爱上你的愁眉苦脸。&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
