@@ -112,7 +112,7 @@ var _hmt = _hmt || [];
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/ios/" style="font-size: 20px;">ios</a> <a href="/tags/录制小视频/" style="font-size: 10px;">录制小视频</a>
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/ios/" style="font-size: 20px;">ios</a> <a href="/tags/录制小视频/" style="font-size: 10px;">录制小视频</a>
 					</div>
 				</section>
 				
@@ -210,6 +210,73 @@ var _hmt = _hmt || [];
       
       
 
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-RxJava学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/20/RxJava学习/" class="article-date">
+  	<time datetime="2016-04-20T08:57:23.000Z" itemprop="datePublished">2016-04-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/20/RxJava学习/">RxJava学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote><p><strong>笑一个吧，没人会爱上你的愁眉苦脸。</strong></p>
+</blockquote>
+<p><a href="https://github.com/ReactiveX/RxJava" target="_blank">RxJava Github</a>基本用法都可以查考文档。</p>
+<h3 id="一-基本用法："><a href="#一-基本用法：" class="headerlink" title="一.基本用法："></a>一.基本用法：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Observable&lt;String&gt; myObservaable = Observable.create(<span class="keyword">new</span> Observable.OnSubscribe&lt;String&gt;() &#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Subscriber&lt;? <span class="keyword">super</span> String&gt; t)</span> </span>&#123;</span><br><span class="line">		t.onNext(<span class="string">"Hello"</span>);</span><br><span class="line">		t.onCompleted();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line">Subscriber&lt;String&gt; mySubscriber = <span class="keyword">new</span> Subscriber&lt;String&gt;() &#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(String t)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"onNext "</span> + t);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable e)</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCompleted</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">myObservaable.subscribe(mySubscriber);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/App开发/">App开发</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/20/RxJava学习/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -386,7 +453,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote><p><strong>不闻不问不一定是忘记了，但一定是疏远了，彼此沉默太久就连主动的都需要勇气。</strong></p>
+        <blockquote><p><strong>一件事情，对你伤害的程度与事情本身没有任何关系，取决于你对这件事情的态度。</strong></p>
 </blockquote>
 <p>aop的实现我目前了解的有两种，一种是通过动态代理（实现InvocationHandler接口或者用第三方cglib库，两者区别这就不介绍了），另一种是aspectJ。aspectJ基本环境搭建，首先eclipse<a href="http://www.eclipse.org/aspectj/downloads.php">安装插件</a>，aspect基本用法可以参考官方<a href="http://www.eclipse.org/aspectj/doc/released/progguide/starting-aspectj.html">官方文档</a></p>
 <h3 id="一-Aspect基本用法，代码如下："><a href="#一-Aspect基本用法，代码如下：" class="headerlink" title="一.Aspect基本用法，代码如下："></a>一.Aspect基本用法，代码如下：</h3><p><strong><em> 1.创建基本的main入口 </em></strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zlc.aj;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Test t = <span class="keyword">new</span> Test();</span><br><span class="line">		t.sayHello();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>
