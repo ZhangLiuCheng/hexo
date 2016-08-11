@@ -112,7 +112,7 @@ var _hmt = _hmt || [];
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/ios/" style="font-size: 20px;">ios</a> <a href="/tags/录制小视频/" style="font-size: 10px;">录制小视频</a>
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/ios/" style="font-size: 20px;">ios</a> <a href="/tags/javapoet/" style="font-size: 10px;">javapoet</a> <a href="/tags/rxJava/" style="font-size: 10px;">rxJava</a> <a href="/tags/录制小视频/" style="font-size: 10px;">录制小视频</a>
 					</div>
 				</section>
 				
@@ -227,6 +227,74 @@ var _hmt = _hmt || [];
 
 
   
+    <article id="post-Javapoet学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/22/Javapoet学习/" class="article-date">
+  	<time datetime="2016-04-22T09:00:03.000Z" itemprop="datePublished">2016-04-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/22/Javapoet学习/">Javapoet学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote><p><strong>如果你简单，这个世界就对你简单。</strong></p>
+</blockquote>
+<p><a href="https://github.com/square/javapoet" target="_blank">github地址</a></p>
+<p>原由是看到了<a href="https://github.com/JakeWharton/butterknife" target="_blank">butterknife</a>框架，里面用的是RetentionPolicy.CLASS，编译的时候通过注解实现框架的功能，比RetentionPolicy.RUNNTIME再通过反射实现效率高。<br>然后就去看RetentionPolicy.CLASS的实现原理，需要注解处理器(Annotation Processor)，最后就一步步的看到了javapoet，自动生成java代码。<br>扯远了，直接记录过程吧。</p>
+<h3 id="一-过程搭建："><a href="#一-过程搭建：" class="headerlink" title="一.过程搭建："></a>一.过程搭建：</h3><p>我是通过eclipse maven自动下载jar的。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">	MethodSpec main = MethodSpec</span><br><span class="line">			.methodBuilder(<span class="string">"main"</span>)</span><br><span class="line">			.addModifiers(Modifier.PUBLIC, Modifier.STATIC)</span><br><span class="line">			.returns(<span class="keyword">void</span>.class)</span><br><span class="line">			.addParameter(String[].class, <span class="string">"args"</span>)</span><br><span class="line">			.addStatement(<span class="string">"$T.out.println($S)"</span>, System.class, <span class="string">"Hello, JavaPoet!"</span>).build();</span><br><span class="line"></span><br><span class="line">	TypeSpec helloWorld = TypeSpec.classBuilder(<span class="string">"HelloWorld"</span>)</span><br><span class="line">			.addModifiers(Modifier.PUBLIC, Modifier.FINAL).addMethod(main)</span><br><span class="line">			.build();</span><br><span class="line"></span><br><span class="line">	JavaFile javaFile = JavaFile.builder(<span class="string">"com.zlc.javapoet"</span>,</span><br><span class="line">			helloWorld).build();</span><br><span class="line">	<span class="comment">// 写入src目录下面</span></span><br><span class="line">	String path = System.getProperty(<span class="string">"user.dir"</span>) + <span class="string">"/src"</span>;</span><br><span class="line">	javaFile.writeTo(<span class="keyword">new</span> File(path));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javapoet/">javapoet</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/java/">java</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/22/Javapoet学习/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-RxJava学习" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -253,7 +321,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote><p><strong>笑一个吧，没人会爱上你的愁眉苦脸。</strong></p>
+        <blockquote><p><strong>人生如果错了方向，停止就是进步。</strong></p>
 </blockquote>
 <p><a href="https://github.com/ReactiveX/RxJava" target="_blank">RxJava Github</a>基本用法都可以查考文档。</p>
 <h3 id="一-基本用法："><a href="#一-基本用法：" class="headerlink" title="一.基本用法："></a>一.基本用法：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Observable&lt;String&gt; myObservaable = Observable.create(<span class="keyword">new</span> Observable.OnSubscribe&lt;String&gt;() &#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Subscriber&lt;? <span class="keyword">super</span> String&gt; t)</span> </span>&#123;</span><br><span class="line">		t.onNext(<span class="string">"Hello"</span>);</span><br><span class="line">		t.onCompleted();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line">Subscriber&lt;String&gt; mySubscriber = <span class="keyword">new</span> Subscriber&lt;String&gt;() &#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(String t)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"onNext "</span> + t);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable e)</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCompleted</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">myObservaable.subscribe(mySubscriber);</span><br></pre></td></tr></table></figure>
@@ -264,12 +332,12 @@ var _hmt = _hmt || [];
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rxJava/">rxJava</a></li></ul>
 	</div>
 
       
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/App开发/">App开发</a>
+	<a class="article-category-link" href="/categories/Java/">Java</a>
 	</div>
 
 
