@@ -1,5 +1,5 @@
 ---
-title: Javapoet学习
+title: Javapoet生成java文件
 date: 2016-04-22 17:00:03
 comments: true
 tags: 
@@ -12,7 +12,7 @@ categories:
 <strong>如果你简单，这个世界就对你简单。</strong>
 {% endblockquote %}
 
-<a href="https://github.com/square/javapoet" target="_blank">github地址</a>
+官方说明JavaPoet is a Java API for generating .java source files.
 
 原由是看到了<a href="https://github.com/JakeWharton/butterknife" target="_blank">butterknife</a>框架，里面用的是RetentionPolicy.CLASS，编译的时候通过注解实现框架的功能，比RetentionPolicy.RUNNTIME再通过反射实现效率高。
 然后就去看RetentionPolicy.CLASS的实现原理，需要注解处理器(Annotation Processor)，最后就一步步的看到了javapoet，自动生成java代码。
@@ -65,6 +65,7 @@ void main() {
 {% endcodeblock %}
 
 还有很多功能，参照官方用法，用到的时候再去看吧。
+<a href="https://github.com/square/javapoet" target="_blank">github地址</a>
 
 
 
