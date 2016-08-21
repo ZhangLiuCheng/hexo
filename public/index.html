@@ -112,7 +112,7 @@ var _hmt = _hmt || [];
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/ios/" style="font-size: 20px;">ios</a> <a href="/tags/javapoet/" style="font-size: 10px;">javapoet</a> <a href="/tags/rxJava/" style="font-size: 10px;">rxJava</a> <a href="/tags/录制小视频/" style="font-size: 10px;">录制小视频</a>
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/aop/" style="font-size: 10px;">aop</a> <a href="/tags/ios/" style="font-size: 20px;">ios</a> <a href="/tags/javapoet/" style="font-size: 10px;">javapoet</a> <a href="/tags/ndk/" style="font-size: 10px;">ndk</a> <a href="/tags/rxJava/" style="font-size: 10px;">rxJava</a> <a href="/tags/录制小视频/" style="font-size: 10px;">录制小视频</a>
 					</div>
 				</section>
 				
@@ -172,11 +172,11 @@ var _hmt = _hmt || [];
 
       <div class="body-wrap">
   
-    <article id="post-笔记" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-android防破解技术研究" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/08/笔记/" class="article-date">
-  	<time datetime="2016-07-08T05:49:02.000Z" itemprop="datePublished">2016-07-08</time>
+      <a href="/2016/05/10/android防破解技术研究/" class="article-date">
+  	<time datetime="2016-05-10T02:37:26.000Z" itemprop="datePublished">2016-05-10</time>
 </a>
     </div>
   
@@ -189,7 +189,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/08/笔记/">笔记</a>
+      <a class="article-title" href="/2016/05/10/android防破解技术研究/">android防破解技术研究</a>
     </h1>
   
 
@@ -198,18 +198,31 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.mvc mvp mvvm    (<a href="http://www.tuicool.com/articles/FrAJ3qv" target="_blank" rel="external">http://www.tuicool.com/articles/FrAJ3qv</a>)</p>
-<p>2.DataBinding    (<a href="http://mp.weixin.qq.com/s?__biz=MjM5NDkxMTgyNw==&amp;mid=405212572&amp;idx=1&amp;sn=e2a84186dccc7661e0644feb38d74f8c&amp;scene=21#wechat_redirect" target="_blank" rel="external">http://mp.weixin.qq.com/s?__biz=MjM5NDkxMTgyNw==&amp;mid=405212572&amp;idx=1&amp;sn=e2a84186dccc7661e0644feb38d74f8c&amp;scene=21#wechat_redirect</a>)</p>
-<p>3.RACSubject</p>
-
+        <blockquote><p><strong>人生如果错了方向，停止就是进步。</strong></p>
+</blockquote>
+<h3 id="客户端和服务器通讯，key的存储方式一般有两种"><a href="#客户端和服务器通讯，key的存储方式一般有两种" class="headerlink" title="客户端和服务器通讯，key的存储方式一般有两种"></a>客户端和服务器通讯，key的存储方式一般有两种</h3><p>一：动态从服务器获有时效性的key，失效的时候再去请求，这种额外增加了请求次数还要处理key失效的情况，如果用抓包软件还是可以破解key，相对来说不是太理想。</p>
+<p>二：将私有的key通过native方法获取，打包后在so文件里面。但别人可以反编译代码，将你的so文件加载到自己代码里面，然后<strong><em>通过你的native方法去获取key</em></strong>，所以这边要解决下自己的so防止别人使用。<br>解决这个就是在native那边<code>验证签名</code>，不是自己签名不返回key，还可以让程序崩溃。这样基本上可以确保key的安全。</p>
+<h3 id="c代码"><a href="#c代码" class="headerlink" title="c代码"></a>c代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> bool checkSignature = <span class="keyword">false</span>;</span><br><span class="line"><span class="comment">// 检查签名是否被更改过</span></span><br><span class="line"> <span class="function">JNIEXPORT jboolean JNICALL <span class="title">Java_com_innotechx_jni_NativeUtils_checkSignature</span></span><br><span class="line">         <span class="params">(JNIEnv *env, jclass clazz, jobject context_object)</span> </span>&#123;</span><br><span class="line">     jstring signature = Java_com_innotechx_jni_NativeUtils_getSignature(env, clazz, context_object);</span><br><span class="line">     <span class="keyword">const</span> <span class="keyword">char</span> *orginalSignature = <span class="string">"244699197"</span>;</span><br><span class="line">     <span class="keyword">const</span> <span class="keyword">char</span> *currentSignature = jstringTostring(env, signature);</span><br><span class="line">     <span class="keyword">int</span> result = strcmp(orginalSignature, currentSignature);</span><br><span class="line">     <span class="keyword">return</span> result == <span class="number">0</span> ? <span class="keyword">true</span> : <span class="keyword">false</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">// 获取私有的key(用与加解密或者和服务器约定好的key)</span></span><br><span class="line"> <span class="function">JNIEXPORT jstring JNICALL <span class="title">Java_com_innotechx_jni_NativeUtils_getPrivateKey</span></span><br><span class="line">         <span class="params">(JNIEnv *env, jclass clazz, jobject context_object)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">if</span> (<span class="keyword">false</span> == checkSignature) &#123;</span><br><span class="line">         checkSignature = Java_com_innotechx_jni_NativeUtils_checkSignature(env, clazz, context_object);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">if</span> (checkSignature) &#123;</span><br><span class="line">         <span class="keyword">return</span> env-&gt;NewStringUTF(<span class="string">"这边返回你自己的key"</span>);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> env-&gt;NewStringUTF(<span class="string">"获取失败"</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
     <div class="article-info article-info-index">
       
       
-      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ndk/">ndk</a></li></ul>
+	</div>
 
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/App开发/">App开发</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/10/android防破解技术研究/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -618,6 +631,61 @@ var _hmt = _hmt || [];
         <p class="article-more-link">
           <a  href="/2016/04/03/aspectJ面向切面编程/#more">阅读全文 >></a>
         </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/01/笔记/" class="article-date">
+  	<time datetime="2016-04-01T05:49:02.000Z" itemprop="datePublished">2016-04-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/01/笔记/">笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.mvc mvp mvvm    (<a href="http://www.tuicool.com/articles/FrAJ3qv" target="_blank" rel="external">http://www.tuicool.com/articles/FrAJ3qv</a>)</p>
+<p>2.DataBinding    (<a href="http://mp.weixin.qq.com/s?__biz=MjM5NDkxMTgyNw==&amp;mid=405212572&amp;idx=1&amp;sn=e2a84186dccc7661e0644feb38d74f8c&amp;scene=21#wechat_redirect" target="_blank" rel="external">http://mp.weixin.qq.com/s?__biz=MjM5NDkxMTgyNw==&amp;mid=405212572&amp;idx=1&amp;sn=e2a84186dccc7661e0644feb38d74f8c&amp;scene=21#wechat_redirect</a>)</p>
+<p>3.RACSubject</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
       
       <div class="clearfix"></div>
     </div>

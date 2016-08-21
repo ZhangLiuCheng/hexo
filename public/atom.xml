@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-08T05:51:36.000Z</updated>
+  <updated>2016-08-21T14:07:14.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,23 +16,55 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>笔记</title>
-    <link href="http://yoursite.com/2016/07/08/%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2016/07/08/笔记/</id>
-    <published>2016-07-08T05:49:02.000Z</published>
-    <updated>2016-07-08T05:51:36.000Z</updated>
+    <title>android防破解技术研究</title>
+    <link href="http://yoursite.com/2016/05/10/android%E9%98%B2%E7%A0%B4%E8%A7%A3%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/"/>
+    <id>http://yoursite.com/2016/05/10/android防破解技术研究/</id>
+    <published>2016-05-10T02:37:26.000Z</published>
+    <updated>2016-08-21T14:07:14.000Z</updated>
     
-    <content type="html">&lt;p&gt;1.mvc mvp mvvm    (&lt;a href=&quot;http://www.tuicool.com/articles/FrAJ3qv&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.tuicool.com/articles/FrAJ3qv&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;2.DataBinding    (&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MjM5NDkxMTgyNw==&amp;amp;mid=405212572&amp;amp;idx=1&amp;amp;sn=e2a84186dccc7661e0644feb38d74f8c&amp;amp;scene=21#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mp.weixin.qq.com/s?__biz=MjM5NDkxMTgyNw==&amp;amp;mid=405212572&amp;amp;idx=1&amp;amp;sn=e2a84186dccc7661e0644feb38d74f8c&amp;amp;scene=21#wechat_redirect&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;3.RACSubject&lt;/p&gt;
+    <content type="html">&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;人生如果错了方向，停止就是进步。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;客户端和服务器通讯，key的存储方式一般有两种&quot;&gt;&lt;a href=&quot;#客户端和服务器通讯，key的存储方式一般有两种&quot; class=&quot;headerlink&quot; title=&quot;客户端和服务器通讯，key的存储方式一般有两种&quot;&gt;&lt;/a&gt;客户端和服务器通讯，key的存储方式一般有两种&lt;/h3&gt;&lt;p&gt;一：动态从服务器获有时效性的key，失效的时候再去请求，这种额外增加了请求次数还要处理key失效的情况，如果用抓包软件还是可以破解key，相对来说不是太理想。&lt;/p&gt;
+&lt;p&gt;二：将私有的key通过native方法获取，打包后在so文件里面。但别人可以反编译代码，将你的so文件加载到自己代码里面，然后&lt;strong&gt;&lt;em&gt;通过你的native方法去获取key&lt;/em&gt;&lt;/strong&gt;，所以这边要解决下自己的so防止别人使用。&lt;br&gt;解决这个就是在native那边&lt;code&gt;验证签名&lt;/code&gt;，不是自己签名不返回key，还可以让程序崩溃。这样基本上可以确保key的安全。&lt;/p&gt;
+&lt;h3 id=&quot;c代码&quot;&gt;&lt;a href=&quot;#c代码&quot; class=&quot;headerlink&quot; title=&quot;c代码&quot;&gt;&lt;/a&gt;c代码&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; bool checkSignature = &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 检查签名是否被更改过&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;function&quot;&gt;JNIEXPORT jboolean JNICALL &lt;span class=&quot;title&quot;&gt;Java_com_innotechx_jni_NativeUtils_checkSignature&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &lt;span class=&quot;params&quot;&gt;(JNIEnv *env, jclass clazz, jobject context_object)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     jstring signature = Java_com_innotechx_jni_NativeUtils_getSignature(env, clazz, context_object);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; *orginalSignature = &lt;span class=&quot;string&quot;&gt;&quot;244699197&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; *currentSignature = jstringTostring(env, signature);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; result = strcmp(orginalSignature, currentSignature);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; result == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; ? &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt; : &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;comment&quot;&gt;// 获取私有的key(用与加解密或者和服务器约定好的key)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;function&quot;&gt;JNIEXPORT jstring JNICALL &lt;span class=&quot;title&quot;&gt;Java_com_innotechx_jni_NativeUtils_getPrivateKey&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &lt;span class=&quot;params&quot;&gt;(JNIEnv *env, jclass clazz, jobject context_object)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt; == checkSignature) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         checkSignature = Java_com_innotechx_jni_NativeUtils_checkSignature(env, clazz, context_object);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (checkSignature) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; env-&amp;gt;NewStringUTF(&lt;span class=&quot;string&quot;&gt;&quot;这边返回你自己的key&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; env-&amp;gt;NewStringUTF(&lt;span class=&quot;string&quot;&gt;&quot;获取失败&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 获取签名信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;JNIEXPORT jstring JNICALL &lt;span class=&quot;title&quot;&gt;Java_com_innotechx_jni_NativeUtils_getSignature&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;params&quot;&gt;(JNIEnv *env, jclass clazz, jobject context_object)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    jclass context_class = env-&amp;gt;GetObjectClass(context_object);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;返回自己签名的hash值(代码见demo)&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;反编译apk&quot;&gt;&lt;a href=&quot;#反编译apk&quot; class=&quot;headerlink&quot; title=&quot;反编译apk&quot;&gt;&lt;/a&gt;反编译apk&lt;/h3&gt;&lt;p&gt;工具介绍&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;apktool 资源文件获取，可以提取出图片文件和布局文件进行使用查看&lt;/li&gt;
+&lt;li&gt;dex2jar 将apk反编译成java源码（classes.dex转化成jar文件）&lt;/li&gt;
+&lt;li&gt;jd-gui 查看APK中classes.dex转化成出的jar文件，即源码文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;常用命令&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;apktool d -f app-release.apk -o app-release1&lt;/li&gt;
+&lt;li&gt;apktool b app-release1 重新打包apk(打包好的apk放在app-release1／dist目录里面）&lt;/li&gt;
+&lt;li&gt;直接安装app-release1／dist里的apk会出现&lt;code&gt;[INSTALL_PARSE_FAILED_UNEXPECTED_EXCEPTION]&lt;/code&gt;错误,所有需要重新签名 &lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore my_application.apk alias_name&lt;/code&gt; 重新签名&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;查看apk代码，将要反编译的APK后缀名改为.rar或则 .zip并解压，得到其中的额classes.dex文件，将获取到的classes.dex放到之前解压出来的工具dex2jar-0.0.9.15 文件夹内。&lt;code&gt;./dex2jar.sh classes.dex&lt;/code&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/ZhangLiuCheng/NdkDemo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Demo&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;发发牢骚：&quot;&gt;&lt;a href=&quot;#发发牢骚：&quot; class=&quot;headerlink&quot; title=&quot;发发牢骚：&quot;&gt;&lt;/a&gt;发发牢骚：&lt;/h3&gt;&lt;p&gt;最近刚换了份工作，上一家创业公司融资一直没拿到，创业这年头也不好创，老板也挺不容易的。&lt;br&gt;虽然工作了六年，android和ios虽然都会做，但是找个满意的工作也相当不容易啊，app坑少萝卜多，加上学历不高，以后的以后该怎么发展呢！&lt;/p&gt;
+&lt;h3 id=&quot;参考代码&quot;&gt;&lt;a href=&quot;#参考代码&quot; class=&quot;headerlink&quot; title=&quot;参考代码&quot;&gt;&lt;/a&gt;参考代码&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://www.androidchina.net/4187.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.androidchina.net/4187.html&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://m.blog.csdn.net/article/details?id=51927631&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://m.blog.csdn.net/article/details?id=51927631&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/hui12581/article/details/44832651&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/hui12581/article/details/44832651&lt;/a&gt;  JNI详解—从不懂到理解&lt;br&gt;&lt;a href=&quot;http://kiya.space/2015/11/12/check-signature-for-avoiding-fake-app-java-level-check/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://kiya.space/2015/11/12/check-signature-for-avoiding-fake-app-java-level-check/&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;1.mvc mvp mvvm    (&lt;a href=&quot;http://www.tuicool.com/articles/FrAJ3qv&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.tuicool.com/articles/FrAJ3
+      &lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;人生如果错了方向，停止就是进步。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;客户端和服务器通讯，key的存储方式一般有两种&quot;&gt;&lt;a href=&quot;#客户端和服务器通讯，key的存储方式一般有两种&quot; class=&quot;headerlink&quot; title=&quot;客户端和服务器通讯，key的存储方式一般有两种&quot;&gt;&lt;/a&gt;客户端和服务器通讯，key的存储方式一般有两种&lt;/h3&gt;&lt;p&gt;一：动态从服务器获有时效性的key，失效的时候再去请求，这种额外增加了请求次数还要处理key失效的情况，如果用抓包软件还是可以破解key，相对来说不是太理想。&lt;/p&gt;
+&lt;p&gt;二：将私有的key通过native方法获取，打包后在so文件里面。但别人可以反编译代码，将你的so文件加载到自己代码里面，然后&lt;strong&gt;&lt;em&gt;通过你的native方法去获取key&lt;/em&gt;&lt;/strong&gt;，所以这边要解决下自己的so防止别人使用。&lt;br&gt;解决这个就是在native那边&lt;code&gt;验证签名&lt;/code&gt;，不是自己签名不返回key，还可以让程序崩溃。这样基本上可以确保key的安全。&lt;/p&gt;
+&lt;h3 id=&quot;c代码&quot;&gt;&lt;a href=&quot;#c代码&quot; class=&quot;headerlink&quot; title=&quot;c代码&quot;&gt;&lt;/a&gt;c代码&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; bool checkSignature = &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 检查签名是否被更改过&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;function&quot;&gt;JNIEXPORT jboolean JNICALL &lt;span class=&quot;title&quot;&gt;Java_com_innotechx_jni_NativeUtils_checkSignature&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &lt;span class=&quot;params&quot;&gt;(JNIEnv *env, jclass clazz, jobject context_object)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     jstring signature = Java_com_innotechx_jni_NativeUtils_getSignature(env, clazz, context_object);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; *orginalSignature = &lt;span class=&quot;string&quot;&gt;&quot;244699197&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; *currentSignature = jstringTostring(env, signature);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; result = strcmp(orginalSignature, currentSignature);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; result == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; ? &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt; : &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;comment&quot;&gt;// 获取私有的key(用与加解密或者和服务器约定好的key)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;function&quot;&gt;JNIEXPORT jstring JNICALL &lt;span class=&quot;title&quot;&gt;Java_com_innotechx_jni_NativeUtils_getPrivateKey&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &lt;span class=&quot;params&quot;&gt;(JNIEnv *env, jclass clazz, jobject context_object)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt; == checkSignature) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         checkSignature = Java_com_innotechx_jni_NativeUtils_checkSignature(env, clazz, context_object);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (checkSignature) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; env-&amp;gt;NewStringUTF(&lt;span class=&quot;string&quot;&gt;&quot;这边返回你自己的key&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; env-&amp;gt;NewStringUTF(&lt;span class=&quot;string&quot;&gt;&quot;获取失败&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
+      <category term="App开发" scheme="http://yoursite.com/categories/App%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+      <category term="ndk" scheme="http://yoursite.com/tags/ndk/"/>
     
   </entry>
   
@@ -261,6 +293,27 @@
     
     
       <category term="aop" scheme="http://yoursite.com/tags/aop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>笔记</title>
+    <link href="http://yoursite.com/2016/04/01/%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2016/04/01/笔记/</id>
+    <published>2016-04-01T05:49:02.000Z</published>
+    <updated>2016-08-17T02:38:25.000Z</updated>
+    
+    <content type="html">&lt;p&gt;1.mvc mvp mvvm    (&lt;a href=&quot;http://www.tuicool.com/articles/FrAJ3qv&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.tuicool.com/articles/FrAJ3qv&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;2.DataBinding    (&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MjM5NDkxMTgyNw==&amp;amp;mid=405212572&amp;amp;idx=1&amp;amp;sn=e2a84186dccc7661e0644feb38d74f8c&amp;amp;scene=21#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mp.weixin.qq.com/s?__biz=MjM5NDkxMTgyNw==&amp;amp;mid=405212572&amp;amp;idx=1&amp;amp;sn=e2a84186dccc7661e0644feb38d74f8c&amp;amp;scene=21#wechat_redirect&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;3.RACSubject&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.mvc mvp mvvm    (&lt;a href=&quot;http://www.tuicool.com/articles/FrAJ3qv&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.tuicool.com/articles/FrAJ3
+    
+    </summary>
+    
     
   </entry>
   
