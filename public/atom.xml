@@ -301,16 +301,41 @@
     <link href="http://yoursite.com/2016/04/01/%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2016/04/01/笔记/</id>
     <published>2016-04-01T05:49:02.000Z</published>
-    <updated>2016-08-17T02:38:25.000Z</updated>
+    <updated>2016-08-24T11:01:45.000Z</updated>
     
-    <content type="html">&lt;p&gt;1.mvc mvp mvvm    (&lt;a href=&quot;http://www.tuicool.com/articles/FrAJ3qv&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.tuicool.com/articles/FrAJ3qv&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;2.DataBinding    (&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MjM5NDkxMTgyNw==&amp;amp;mid=405212572&amp;amp;idx=1&amp;amp;sn=e2a84186dccc7661e0644feb38d74f8c&amp;amp;scene=21#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mp.weixin.qq.com/s?__biz=MjM5NDkxMTgyNw==&amp;amp;mid=405212572&amp;amp;idx=1&amp;amp;sn=e2a84186dccc7661e0644feb38d74f8c&amp;amp;scene=21#wechat_redirect&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;3.RACSubject&lt;/p&gt;
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;vpnService防火墙 &lt;a href=&quot;https://github.com/M66B/NetGuard&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/M66B/NetGuard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;app流量统计 &lt;a href=&quot;http://keepcleargas.bitbucket.org/2013/10/12/android-App-Traffic.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://keepcleargas.bitbucket.org/2013/10/12/android-App-Traffic.html&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;mvc mvp mvvm    (&lt;a href=&quot;http://www.tuicool.com/articles/FrAJ3qv&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.tuicool.com/articles/FrAJ3qv&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;DataBinding    (&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MjM5NDkxMTgyNw==&amp;amp;mid=405212572&amp;amp;idx=1&amp;amp;sn=e2a84186dccc7661e0644feb38d74f8c&amp;amp;scene=21#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://mp.weixin.qq.com/s?__biz=MjM5NDkxMTgyNw==&amp;amp;mid=405212572&amp;amp;idx=1&amp;amp;sn=e2a84186dccc7661e0644feb38d74f8c&amp;amp;scene=21#wechat_redirect&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;RACSubject&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;RxJava &lt;a href=&quot;http://gank.io/post/560e15be2dca930e00da1083&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://gank.io/post/560e15be2dca930e00da1083&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;RxJava 与 Retrofit 结合的最佳实践 &lt;a href=&quot;http://gank.io/post/56e80c2c677659311bed9841&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://gank.io/post/56e80c2c677659311bed9841&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;android混淆 &lt;a href=&quot;http://jn.android.tedu.cn/news/148687.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://jn.android.tedu.cn/news/148687.html&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;android学习过程 &lt;a href=&quot;http://hukai.me/android-training-course-in-chinese/testing/activity-testing/prepare-activity-testing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://hukai.me/android-training-course-in-chinese/testing/activity-testing/prepare-activity-testing.html&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;BuildConfig.DEBUG 和 android:debuggable=”true” tools:ignore=”HardcodedDebugMode”&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;6.0权限 &lt;a href=&quot;http://www.open-open.com/lib/view/open1446693346826.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.open-open.com/lib/view/open1446693346826.html&lt;/a&gt;&lt;pre&gt;&lt;code&gt;https://github.com/tbruyelle/RxPermissions
+https://github.com/anthonycr/Grant
+https://github.com/hotchemi/PermissionsDispatcher
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;1.mvc mvp mvvm    (&lt;a href=&quot;http://www.tuicool.com/articles/FrAJ3qv&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.tuicool.com/articles/FrAJ3
+      &lt;ul&gt;
+&lt;li&gt;vpnService防火墙 &lt;a href=&quot;https://github.com/M66B/NetGuard&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/M66B/NetGuard&lt;/a&gt;&lt;/li&gt;
+&lt;
     
     </summary>
     
